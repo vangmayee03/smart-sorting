@@ -1,3 +1,4 @@
+#cell_1
 import os
 import shutil
 from sklearn.model_selection import train_test_split
@@ -34,6 +35,7 @@ for folder in os.listdir(dataset_dir):
         shutil.copy(os.path.join(folder_path, img), os.path.join(output_dir, 'test', label, img))
 
 print("✅ Dataset prepared at:", output_dir)
+#cell_2
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -92,6 +94,10 @@ history = model.fit(
     epochs=10,
     callbacks=[early_stop]
 )
+#cell_3
+model.save(r"C:\Users\prasa\OneDrive\Desktop\healthy_vs_rotten.h5")
+print("✅ Model saved successfully.")
+#cell_4
 from tensorflow.keras.models import load_model
 from sklearn.metrics import classification_report, confusion_matrix
 import seaborn as sns
@@ -126,7 +132,10 @@ plt.xlabel("Predicted")
 plt.ylabel("True")
 plt.title("Confusion Matrix")
 plt.show()
+#cell_5
 !pip install ipywidgets
+
+#cell_6
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.applications.vgg16 import preprocess_input
