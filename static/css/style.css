@@ -1,0 +1,223 @@
+/* style.css - used by all pages */
+
+/* GLOBAL RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+  background-color: #4CAF50;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #000;
+}
+
+/* HERO SECTION (HOME PAGE) */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../uploads/fav.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #fff;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* ABOUT PAGE */
+.about-section {
+  padding: 100px 10%;
+  background-color: #fff;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.green-tick::before {
+  content: '\2714';
+  color: green;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* PREDICT PAGE */
+.predict-section {
+  padding: 80px 10%;
+}
+
+.upload-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.upload-form input[type=file] {
+  margin-top: 20px;
+}
+
+.upload-form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* PORTFOLIO-DETAILS (RESULT PAGE) */
+.result-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.result-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.result-box .healthy {
+  color: green;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.result-box .rotten {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 10%;
+  margin-top: 100px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta-buttons a {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+}
