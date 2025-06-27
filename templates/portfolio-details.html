@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result - Nutrigaze</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+    nav {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .nav-links a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    .result-box {
+      text-align: center;
+      margin-top: 80px;
+    }
+    .result-box h2 {
+      font-size: 2.5rem;
+      color: {{ 'green' if result == 'HEALTHY' else 'red' }};
+      text-transform: uppercase;
+    }
+    .result-box img {
+      margin-top: 30px;
+      max-width: 400px;
+      border-radius: 10px;
+      border: 5px solid #ccc;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #f72585;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Nutrigaze</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('predict') }}">Predict</a>
+    </div>
+  </nav>
+
+  <div class="result-box">
+    <h2>{{ result }}</h2>
+    <img src="{{ image_url }}" alt="Uploaded Image">
+    <br>
+    <a href="{{ url_for('predict') }}" class="back-link">← Try another image</a>
+  </div>
+</body>
+</html>

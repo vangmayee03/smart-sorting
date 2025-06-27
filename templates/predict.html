@@ -1,0 +1,83 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Predict - Nutrigaze</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .nav-links a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    .nav-links a.active {
+      border-bottom: 2px solid #f72585;
+    }
+    .container {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    input[type="file"] {
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .predict-btn {
+      margin-top: 20px;
+      background-color: #22c55e;
+      border: none;
+      padding: 12px 30px;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="logo">Nutrigaze</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/predict" class="active">Predict</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Image Classification</h2>
+    <form method="POST" enctype="multipart/form-data" action="/predict">
+      <label>Upload Your Image :</label>
+      <input type="file" name="pc_image" required>
+      <br>
+      <button class="predict-btn">predict</button>
+    </form>
+  </div>
+</body>
+</html>
